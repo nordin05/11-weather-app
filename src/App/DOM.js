@@ -25,16 +25,17 @@ export function initDOM(Weather, units) {
         Weather[units].humidity,
         Weather[units].precipitation,
         Weather[units].wind_dir,
-        Weather[units].wind_speed
+        Weather[units].wind_speed,
+        units
     );
 }
 
 function setLocation(country, city, region, time) {
     countryDiv.innerHTML = country;
-    regionDiv.innerHTML = region + ", " + city;
+    regionDiv.innerHTML = city;
 
     time = time.split(" ");
-    dateDiv.innerHTML = time[0];
+    dateDiv.innerHTML = time[0].replaceAll("-", "/");
     timeDiv.innerHTML = time[1];
 }
 
@@ -47,8 +48,13 @@ function setTemprature(temprature) {
     tempDiv.innerHTML = temprature;
 }
 
-function setInfo(humidity, precipitation, windDir, windSpeed) {
-    humidSpan.innerHTML = humidity;
-    precipSpan.innerHTML = precipitation;
-    windSpan.innerHTML = windSpeed;
+function setInfo(humidity, precipitation, windDir, windSpeed, units) {
+    humidSpan.innerHTML = humidity + " %";
+    if ((units = "metric")) {
+        precipSpan.innerHTML = precipitation + " mm";
+        windSpan.innerHTML = windSpeed + " km/h";
+    } else {
+        precipSpan.innerHTML = precipitation + " in";
+        windSpan.innerHTML = windSpeed + " mp/h";
+    }
 }
