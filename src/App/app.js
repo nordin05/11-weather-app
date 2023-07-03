@@ -4,7 +4,6 @@ export async function getWeather(location) {
         const response = await fetch(url, { mode: "cors" });
         const weatherData = await response.json();
         return weatherData;
-        // console.log(weatherData.current.temp_c);
     } catch {
         console.error("Error fetching api");
     }
@@ -15,6 +14,7 @@ export function processData(weatherData) {
     const Weather = {};
 
     Weather.location = {};
+    Weather.condition = {};
     Weather.metric = {};
     Weather.imperial = {};
 
@@ -22,6 +22,9 @@ export function processData(weatherData) {
     Weather.location.name = weatherData.location.name;
     Weather.location.region = weatherData.location.region;
     Weather.location.time = weatherData.location.localtime;
+
+    Weather.condition.icon = weatherData.current.condition.icon;
+    Weather.condition.text = weatherData.current.condition.text;
 
     Weather.metric.temprature = weatherData.current.temp_c;
     Weather.imperial.temprature = weatherData.current.temp_f;
