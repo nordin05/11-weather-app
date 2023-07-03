@@ -10,7 +10,8 @@ const tempDiv = document.querySelector(".temprature .temp");
 
 const humidSpan = document.querySelector(".info .humidity span");
 const precipSpan = document.querySelector(".info .precipitation span");
-const windSpan = document.querySelector(".info .wind .speed");
+const windDirection = document.querySelector(".info .wind .direction");
+const windSpeedSpan = document.querySelector(".info .wind .speed");
 
 export function initDOM(Weather, units) {
     setLocation(
@@ -35,7 +36,6 @@ export function toggleDOM(err, mode) {
         setDisplays("none", "none", err);
     } else {
         setDisplays("grid", "flex", "");
-        console.log("BLOCK");
     }
 }
 
@@ -74,11 +74,15 @@ function setTemprature(temprature) {
 
 function setInfo(humidity, precipitation, windDir, windSpeed, units) {
     humidSpan.innerHTML = humidity + " %";
+
+    const newWindDir = windDir + 90;
+    windDirection.style.transform = `rotate(${newWindDir}deg)`;
+
     if ((units = "metric")) {
         precipSpan.innerHTML = precipitation + " mm";
-        windSpan.innerHTML = windSpeed + " km/h";
+        windSpeedSpan.innerHTML = windSpeed + " km/h";
     } else {
         precipSpan.innerHTML = precipitation + " in";
-        windSpan.innerHTML = windSpeed + " mp/h";
+        windSpeedSpan.innerHTML = windSpeed + " mp/h";
     }
 }
