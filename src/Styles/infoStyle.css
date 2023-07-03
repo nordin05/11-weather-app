@@ -20,12 +20,13 @@
 .weather-container .info .wind {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-top: -15px;
 }
 
 .weather-container .info span {
     display: flex;
     align-items: center;
-    margin-top: -20px;
 }
 
 .weather-container .info .wind .direction {
