@@ -78,7 +78,7 @@ function setInfo(humidity, precipitation, windDir, windSpeed, units) {
     const newWindDir = windDir + 90;
     windDirection.style.transform = `rotate(${newWindDir}deg)`;
 
-    if ((units = "metric")) {
+    if (units == "metric") {
         precipSpan.innerHTML = precipitation + " mm";
         windSpeedSpan.innerHTML = windSpeed + " km/h";
     } else {
