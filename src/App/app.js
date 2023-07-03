@@ -1,3 +1,7 @@
+import { initDOM } from "./DOM.js";
+
+export let Weather;
+
 export async function getWeather(location) {
     try {
         let url = `https://api.weatherapi.com/v1/current.json?key=f880993075f84db784693020230207&q=${location}`;
@@ -9,7 +13,16 @@ export async function getWeather(location) {
     }
 }
 
-export function processData(weatherData) {
+export function processWeatherData(weatherData, units) {
+    if (!weatherData.error) {
+        Weather = processData(weatherData);
+        initDOM(Weather, units);
+    } else {
+        console.log(weatherData.error.message);
+    }
+}
+
+function processData(weatherData) {
     console.log(weatherData);
     const Weather = {};
 
