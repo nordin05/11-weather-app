@@ -12,7 +12,7 @@ const humidSpan = document.querySelector(".info .humidity span");
 const precipSpan = document.querySelector(".info .precipitation span");
 const windSpan = document.querySelector(".info .wind .speed");
 
-export function initDom(Weather, units) {
+export function initDOM(Weather, units) {
     setLocation(
         Weather.location.country,
         Weather.location.name,

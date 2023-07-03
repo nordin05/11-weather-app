@@ -1,12 +1,21 @@
 import { getWeather, processData } from "./App/app.js";
-import { initDom } from "./App/DOM.js";
+import { initDOM } from "./App/DOM.js";
 
-getWeather("rotterdam")
-    .then((weatherData) => {
-        const Weather = processData(weatherData);
+const searchBtn = document.querySelector(".search button");
+const inputBar = document.querySelector(".search input");
 
-        initDom(Weather, "metric");
-    })
-    .catch((error) => {
-        console.log(error);
+searchBtn.addEventListener("click", function () {
+    const location = inputBar.value;
+    getWeather(location).then((weatherData) => {
+        processWeatherData(weatherData);
     });
+});
+
+function processWeatherData(weatherData) {
+    if (!weatherData.error) {
+        const Weather = processData(weatherData);
+        initDOM(Weather, "metric");
+    } else {
+        console.log(weatherData.error.message);
+    }
+}
