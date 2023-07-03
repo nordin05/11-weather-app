@@ -7,13 +7,13 @@ const fahrenheitDiv = document.querySelector(".temprature .fahrenheit");
 const celciusDiv = document.querySelector(".temprature .celcius");
 
 export function initListeners() {
-    searchBtn.addEventListener("load", function () {
+    searchBtn.addEventListener("click", function () {
         const location = inputBar.value;
         searchLocation(location);
     });
 }
 
-function searchLocation(location) {
+export function searchLocation(location) {
     if (location != "") {
         getWeather(location).then((weatherData) => {
             processWeatherData(weatherData, "metric");
@@ -28,5 +28,3 @@ function searchLocation(location) {
         });
     }
 }
-
-searchLocation("rotterdam");

@@ -70,3 +70,11 @@ p {
     padding-top: 30px;
     padding-left: 30px;
 }
+
+.weather-container .error {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+    align-self: center;
+    justify-self: center;
+}

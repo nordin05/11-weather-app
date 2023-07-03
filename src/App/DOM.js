@@ -30,6 +30,30 @@ export function initDOM(Weather, units) {
     );
 }
 
+export function toggleDOM(err, mode) {
+    if (mode == "error") {
+        setDisplays("none", err);
+    } else {
+        setDisplays("block", "");
+        console.log("BLOCK");
+    }
+}
+
+function setDisplays(display_mode, error_msg) {
+    const location = document.querySelector(".location");
+    const icon = document.querySelector(".icon");
+    const temprature = document.querySelector(".temprature");
+    const info = document.querySelector(".info");
+    const error = document.querySelector(".error h1");
+
+    location.style.display = display_mode;
+    icon.style.display = display_mode;
+    temprature.style.display = display_mode;
+    info.style.display = display_mode;
+
+    error.innerHTML = error_msg;
+}
+
 function setLocation(country, city, region, time) {
     countryDiv.innerHTML = country;
     regionDiv.innerHTML = city;

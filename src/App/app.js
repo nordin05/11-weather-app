@@ -1,4 +1,4 @@
-import { initDOM } from "./DOM.js";
+import { initDOM, toggleDOM } from "./DOM.js";
 
 export let Weather;
 
@@ -16,9 +16,11 @@ export async function getWeather(location) {
 export function processWeatherData(weatherData, units) {
     if (!weatherData.error) {
         Weather = processData(weatherData);
+        toggleDOM("", "success");
         initDOM(Weather, units);
     } else {
         console.log(weatherData.error.message);
+        toggleDOM(weatherData.error.message, "error");
     }
 }
 
