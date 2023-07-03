@@ -1,0 +1,34 @@
+.weather-container .info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.weather-container .info .humidity {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-container .info .precipitation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-container .info .wind {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-container .info span {
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.weather-container .info .wind .direction {
+    font-size: 35px;
+    padding-bottom: 12px;
+}

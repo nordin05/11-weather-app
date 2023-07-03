@@ -1,0 +1,17 @@
+.weather-container .temprature {
+    display: flex;
+}
+
+.weather-container .temprature h1 {
+    padding-right: 10px;
+}
+
+.weather-container .temprature .celcius {
+    padding-right: 5px;
+    border-right: 2px solid red;
+    height: 30%;
+}
+
+.weather-container .temprature .fahrenheit {
+    padding-left: 5px;
+}
