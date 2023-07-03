@@ -32,24 +32,24 @@ export function initDOM(Weather, units) {
 
 export function toggleDOM(err, mode) {
     if (mode == "error") {
-        setDisplays("none", err);
+        setDisplays("none", "none", err);
     } else {
-        setDisplays("block", "");
+        setDisplays("grid", "flex", "");
         console.log("BLOCK");
     }
 }
 
-function setDisplays(display_mode, error_msg) {
+function setDisplays(grid, flex, error_msg) {
     const location = document.querySelector(".location");
     const icon = document.querySelector(".icon");
     const temprature = document.querySelector(".temprature");
     const info = document.querySelector(".info");
     const error = document.querySelector(".error h1");
 
-    location.style.display = display_mode;
-    icon.style.display = display_mode;
-    temprature.style.display = display_mode;
-    info.style.display = display_mode;
+    location.style.display = grid;
+    icon.style.display = flex;
+    temprature.style.display = flex;
+    info.style.display = flex;
 
     error.innerHTML = error_msg;
 }

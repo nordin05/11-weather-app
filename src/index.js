@@ -7,4 +7,4 @@ import "./Styles/errorStyle.css";
 import { initListeners, searchLocation } from "./App/listeners.js";
 
 initListeners();
-searchLocation("asdfad");
+searchLocation("amsterdam");
