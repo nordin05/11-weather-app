@@ -69,7 +69,7 @@ function setIcon(src, desc) {
 }
 
 function setTemprature(temprature) {
-    tempDiv.innerHTML = temprature;
+    tempDiv.innerHTML = Math.round(temprature);
 }
 
 function setInfo(humidity, precipitation, windDir, windSpeed, units) {
