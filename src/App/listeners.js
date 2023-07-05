@@ -21,10 +21,14 @@ export function searchLocation(location) {
 
         fahrenheitDiv.addEventListener("click", function () {
             initDOM(Weather, "imperial");
+            fahrenheitDiv.style.fontWeight = "600";
+            celciusDiv.style.fontWeight = "500";
         });
 
         celciusDiv.addEventListener("click", function () {
             initDOM(Weather, "metric");
+            fahrenheitDiv.style.fontWeight = "500";
+            celciusDiv.style.fontWeight = "600";
         });
     }
 }
