@@ -3,4 +3,19 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background-color: aqua;
+
+    background-color: var(--container-bg-col);
+    border: 2px solid var(--container-border-col);
+    border-radius: 5px 0px 0px 5px;
+    border-right: none;
+}
+
+.weather-container .icon img {
+    padding: 8px 0px;
+}
+
+.weather-container .icon p {
+    font-size: 18px;
+    color: var(--h-color-text);
 }
