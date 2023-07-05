@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="search-container">
+                <div class="search">
+                    <label for="search"></label>
+                    <input type="text" id="search" name="search" />
+                    <button>Submit</button>
+                </div>
+            </div>
+            <div class="weather-container">
+                <div class="location">
+                    <h1 class="country"></h1>
+                    <h2 class="region"></h2>
+                    <div class="datetime">
+                        <p class="date"></p>
+                        <p class="time"></p>
+                    </div>
+                </div>
+                <div class="icon">
+                    <img src="" alt="" />
+                    <p class="description"></p>
+                </div>
+                <div class="temprature">
+                    <h1 class="temp"></h1>
+                    <p class="celcius">°C</p>
+                    <p class="fahrenheit">°F</p>
+                </div>
+                <div class="info">
+                    <p class="humidity">Humidity: <span></span></p>
+                    <p class="precipitation">Precipitation: <span></span></p>
+                    <div class="wind">
+                        <p>Wind:</p>
+                        <span>
+                            <p class="direction">&#8592;</p>
+                            <p class="speed"></p>
+                        </span>
+                    </div>
+                </div>
+                <div class="error">
+                    <h1></h1>
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
